@@ -1,4 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
+import { AppShell } from './layout/AppShell'
 import { HomePage } from './pages/HomePage'
 import { ShopPage } from './pages/ShopPage'
 import { ProductPage } from './pages/ProductPage'
@@ -9,7 +10,7 @@ import { RegisterPage } from './pages/RegisterPage'
 
 export function App() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <AppShell>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/shop" element={<ShopPage />} />
@@ -19,6 +20,6 @@ export function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
       </Routes>
-    </div>
+    </AppShell>
   )
 }
