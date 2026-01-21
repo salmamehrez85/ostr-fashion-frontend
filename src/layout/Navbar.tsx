@@ -6,13 +6,13 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
-    <nav className="border-b border-[#333333] bg-[#0a0a0a]" role="navigation" aria-label="Main navigation">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <nav className="sticky top-0 z-50 border-b border-[#333333] bg-[#0a0a0a]/95 backdrop-blur-sm" role="navigation" aria-label="Main navigation">
+      <div className="container-content">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link 
             to="/" 
-            className="text-2xl font-bold text-[#d4af37] hover:text-[#e5c158] transition-colors focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded"
+            className="text-3xl font-bold text-[#d4af37] hover:text-[#e5c158] transition-colors focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded-sm px-2 py-1"
             aria-label="OSTR Home"
           >
             OSTR
@@ -22,33 +22,33 @@ export function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <Link 
               to="/" 
-              className="text-[#a0a0a0] hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded px-2 py-1"
+              className="text-[#a0a0a0] hover:text-white transition-colors text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded-sm px-3 py-2"
             >
               Home
             </Link>
             <Link 
               to="/shop" 
-              className="text-[#a0a0a0] hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded px-2 py-1"
+              className="text-[#a0a0a0] hover:text-white transition-colors text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded-sm px-3 py-2"
             >
               Shop
             </Link>
           </div>
           
           {/* Desktop Search */}
-          <div className="hidden lg:block w-64">
+          <div className="hidden lg:block w-80">
             <Input 
               type="search" 
-              placeholder="Search..." 
-              className="py-1.5"
+              placeholder="Search products..." 
+              className="py-2"
               aria-label="Search products"
             />
           </div>
           
           {/* Icons */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-6">
             <Link 
               to="/wishlist" 
-              className="text-[#a0a0a0] hover:text-white transition-colors relative focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded p-1"
+              className="text-[#a0a0a0] hover:text-white transition-colors relative focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded-sm p-2"
               aria-label="Wishlist"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -58,7 +58,7 @@ export function Navbar() {
             
             <Link 
               to="/cart" 
-              className="text-[#a0a0a0] hover:text-white transition-colors relative focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded p-1"
+              className="text-[#a0a0a0] hover:text-white transition-colors relative focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded-sm p-2"
               aria-label="Shopping cart"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -68,7 +68,7 @@ export function Navbar() {
             
             <Link 
               to="/login" 
-              className="hidden sm:flex text-[#a0a0a0] hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded p-1"
+              className="hidden sm:flex text-[#a0a0a0] hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded-sm p-2"
               aria-label="Account"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -79,7 +79,7 @@ export function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden text-[#a0a0a0] hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded p-1"
+              className="md:hidden text-[#a0a0a0] hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-[#d4af37] focus:ring-offset-2 focus:ring-offset-[#0a0a0a] rounded-sm p-2"
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -96,11 +96,11 @@ export function Navbar() {
         
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-[#333333]" role="menu">
+          <div className="md:hidden py-6 border-t border-[#333333]" role="menu">
             <div className="space-y-4">
               <Link 
                 to="/" 
-                className="block text-[#a0a0a0] hover:text-white transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-[#d4af37] rounded"
+                className="block text-[#a0a0a0] hover:text-white transition-colors py-3 text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#d4af37] rounded-sm"
                 onClick={() => setIsMobileMenuOpen(false)}
                 role="menuitem"
               >
@@ -108,7 +108,7 @@ export function Navbar() {
               </Link>
               <Link 
                 to="/shop" 
-                className="block text-[#a0a0a0] hover:text-white transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-[#d4af37] rounded"
+                className="block text-[#a0a0a0] hover:text-white transition-colors py-3 text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#d4af37] rounded-sm"
                 onClick={() => setIsMobileMenuOpen(false)}
                 role="menuitem"
               >
@@ -116,7 +116,7 @@ export function Navbar() {
               </Link>
               <Link 
                 to="/login" 
-                className="block text-[#a0a0a0] hover:text-white transition-colors py-2 focus:outline-none focus:ring-2 focus:ring-[#d4af37] rounded sm:hidden"
+                className="block text-[#a0a0a0] hover:text-white transition-colors py-3 text-base font-medium focus:outline-none focus:ring-2 focus:ring-[#d4af37] rounded-sm sm:hidden"
                 onClick={() => setIsMobileMenuOpen(false)}
                 role="menuitem"
               >
@@ -125,7 +125,7 @@ export function Navbar() {
               <div className="lg:hidden pt-4">
                 <Input 
                   type="search" 
-                  placeholder="Search..." 
+                  placeholder="Search products..." 
                   aria-label="Search products"
                 />
               </div>

@@ -6,10 +6,10 @@ import { products } from '../data/products'
 export function HomePage() {
   const bestSellers = products.filter((p) => p.inStock).slice(0, 4)
   const categories = [
-    { name: 'Tops', path: '/shop?category=tops', image: 'https://via.placeholder.com/300x400/1a1a1a/d4af37?text=Tops' },
-    { name: 'Bottoms', path: '/shop?category=bottoms', image: 'https://via.placeholder.com/300x400/1a1a1a/d4af37?text=Bottoms' },
-    { name: 'Outerwear', path: '/shop?category=outerwear', image: 'https://via.placeholder.com/300x400/1a1a1a/d4af37?text=Outerwear' },
-    { name: 'Accessories', path: '/shop?category=accessories', image: 'https://via.placeholder.com/300x400/1a1a1a/d4af37?text=Accessories' },
+    { name: 'Tops', path: '/shop?category=tops', image: '/img/placeholder.svg' },
+    { name: 'Bottoms', path: '/shop?category=bottoms', image: '/img/placeholder.svg' },
+    { name: 'Outerwear', path: '/shop?category=outerwear', image: '/img/placeholder.svg' },
+    { name: 'Accessories', path: '/shop?category=accessories', image: '/img/placeholder.svg' },
   ]
 
   return (
