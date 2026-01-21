@@ -6,8 +6,10 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export function Card({ children, hover = false, className = '', ...props }: CardProps) {
-  const baseStyles = 'bg-[#1a1a1a] border border-[#333333] rounded-lg transition-all duration-200'
-  const hoverStyles = hover ? 'hover:border-[#404040] hover:shadow-lg cursor-pointer' : ''
+  const baseStyles = 'bg-[#1a1a1a] border border-[#333333] rounded-lg transition-all duration-300'
+  const hoverStyles = hover 
+    ? 'hover:border-[#404040] hover:shadow-[0_8px_30px_rgba(212,175,55,0.12)] hover:-translate-y-1 cursor-pointer' 
+    : ''
   
   return (
     <div
